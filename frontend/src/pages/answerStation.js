@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState, } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import Split from 'react-split'
 // import { Modal } from '../components/General/CoolComponents'
- 
+  
 import AceEditor from 'react-ace'
 // Languages
 import 'ace-builds/src-noconflict/mode-javascript'
