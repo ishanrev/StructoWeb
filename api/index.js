@@ -398,6 +398,7 @@ app.use('/api/auth', authRoute)
 app.use('/api/user', userRoute)
 
 // Step 1:  
+
 const __dirname1 = path.resolve();
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname1, "/frontend/build")));
@@ -525,7 +526,7 @@ app.post('/api/mail', async (req, res) => {
 http.listen(PORT || 3001, () => {
     for (var x = 0; x < 3; x++) {
         console.log("----------------------------------------");
-    }
+    } 
     console.log("successfully started on Port " + PORT);
 });
 
