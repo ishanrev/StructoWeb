@@ -7,8 +7,8 @@ import AceEditor from 'react-ace'
 // Languages
 import 'ace-builds/src-noconflict/mode-javascript'
 import 'ace-builds/src-noconflict/mode-python'
-import 'ace-builds/src-noconflict/mode-json'
-import 'ace-builds/src-noconflict/mode-java'
+import 'ace-builds/src-noconflict/mode-json' 
+import 'ace-builds/src-noconflict/mode-java' 
 import 'ace-builds/src-noconflict/mode-csharp'
 // there are many themes to import, I liked monokai.
 import 'ace-builds/src-noconflict/theme-monokai'
