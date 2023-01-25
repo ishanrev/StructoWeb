@@ -40,9 +40,9 @@ function SideBarMainDrawer({ drawer }) {
                 {/* SideBar header */}
                 <ul className=''>
                     {/* <div className="header flex justify-between "> */}
-                    <li className='pt-1 my-1 mb-[20px]'>
+                    {/* <li className='pt-1 my-1 mb-[20px]'>
                         <img src={HomeStructo} alt="" />
-                    </li>
+                    </li> */}
 
 
                     <div className="search  my-5 w-full gap-2">

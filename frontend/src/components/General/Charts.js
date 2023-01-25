@@ -87,8 +87,8 @@ function BarChartComp() {
       tempData.push({
         name: `Day ${index + 1}`,
         // score: day.pointsCollected,
-        score: day.pointsCollected,
-        // score: Math.floor(Math.random() * 10),
+        // score: day.pointsCollected,
+        score: Math.floor(Math.random() * 10),
         num: day.questionsCompleted
 
       })

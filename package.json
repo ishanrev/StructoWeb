@@ -36,5 +36,9 @@
     "uuid": "^8.3.2"
   },
   "keywords": [],
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "wait-on": "^7.0.1"
+  }
 }

@@ -659,13 +659,14 @@ function AnswerStation({ game, tId, gameId, gameObject }) {
                 let dateStr = `${day}-${month}-${year}`
                 console.log(tempDaysActive)
                 console.log(dateStr)
-                if (tempDaysActive.includes(dateStr) === false) {
-                    tempDaysActive.push(dateStr)
-                }
+                // For main code please fix this section
+                // if (tempDaysActive !==undefined && tempDaysActive.includes(dateStr) === false) {
+                //     tempDaysActive.push(dateStr)
+                //     updateUser({ daysActive: tempDaysActive, dailyProgress: tempDailyUpdate })
+                // }
 
 
-                updateUser({ daysActive: tempDaysActive })
-                setUser({ ...user, dailyProgress: tempDailyUpdate, daysActive: tempDaysActive })
+                // setUser({ ...user, dailyProgress: tempDailyUpdate, daysActive: tempDaysActive })
             }
 
 

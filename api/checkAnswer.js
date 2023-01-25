@@ -217,7 +217,8 @@ const executeJS = async (filepath) => {
     let runCommand;
     // runCommand = `node api/test-codes/${name} `
     runCommand = `node test-codes/${name} `
-
+    console.log('going to run the command right now')
+    console.log('going to run the command right now')
     return new Promise((resolve, reject) => {
         exec(runCommand, (err, stdout, stderr) => {
             if (err)
@@ -562,7 +563,9 @@ const checkAnswerPy = async ({ language, data }) => {
                         console.log(out)
                         // await runJava(filepath)
                     }
-                    console.log()
+                    console.log('__________________________________')
+                    console.log(out)
+                    console.log('__________________________________')
 
                     let out_parsed
                     let output_parsed
