@@ -33,9 +33,7 @@ const TestCard = ({ testId, starts = '', small = true, challengeMode = false, ca
     const { loggedIn, setLoggedIn } = useContext(LoggedInContext)
 
 
-    const ALT_IMAGE = 'https://res.cloudinary.com/dhlxchjon/image/upload/v1659113931/no-image-small_w0xpnx.png'
     useEffect(() => {
-        console.log(testId, "iwofhewufnudfnhspiuhf")
         if (loggedIn === undefined) {
             navigate('/home')
         }

@@ -72,47 +72,7 @@ function ChalengeFriendDrawer({ showFriendsDrawer, setShowFriendsDrawer, testId 
             >
                 <div className="choose-friend">
                     Choose a friend
-                    {/* <div className="chosenFriends my-3 grid grid-cols-2 gap-2">
-                        {challengeFriends.map((friend, index) => {
-
-                            return (
-                                <div className="p-2  px-3 rounded-3xl w-full h-10 flex gap-3 text-white
-                                bg-dark-500" key={index}
-                                    onMouseEnter={() => {
-                                        let temp = [...hover]
-                                        temp[index] = true
-                                        setHover(temp)
-                                    }}
-                                    onMouseLeave={() => {
-                                        let temp = [...hover]
-                                        temp[index] = false
-                                        setHover(temp)
-                                    }}
-                                >
-                                    {hover[index] === true ?
-                                        <div className="deleteSignIn w-full h-full flex
-                                     justify-center items-center transition cursor-pointer "
-                                            onClick={() => {
-                                                let temp = challengeFriends.filter((fr, ind) => {
-                                                    return ind !== index
-                                                })
-                                                console.log(challengeFriends)
-                                                setChallengeFriends(temp)
-                                            }}
-                                        >
-                                            <MinusOutlined />
-
-                                        </div>
-                                        : <>
-                                            <span className='pl-1 '><UserOutlined /></span>
-                                            <span>{friendsUserNames[index]}</span>
-
-                                        </>}
-                                </div>
-                            )
-                        })}
-
-                    </div> */}
+                  
                     {/* <form action="#" autoComplete='off' > */}
 
                     <div className="chosenFriends my-3 flex gap-2">
@@ -135,7 +95,6 @@ function ChalengeFriendDrawer({ showFriendsDrawer, setShowFriendsDrawer, testId 
                         onChange={(e) => { setChallengeFriendSearch(e.target.value) }}
                         autoComplete="new-password"
                     />
-                    {/* </form> */}
 
                     <div className="searchBox h-[350px] w-full rounded-lg border-2 p-3 overflow-y-scroll border-gray-300">
                         {user.friends.friends.map((friend, index) => {
@@ -153,7 +112,6 @@ function ChalengeFriendDrawer({ showFriendsDrawer, setShowFriendsDrawer, testId 
                                             <div className="wrapper flex justify-between items-center" key={index}>
 
                                                 <div className="friend flex mb-2" key={index}>
-                                                    {/* <img src="https://picsum.photos/50" alt="img" className="profilePic w-9 h-9 mr-2 mt-2 rounded-[100%] object-cover" /> */}
                                                     <Image
                                                         style=
                                                         {{
@@ -176,7 +134,6 @@ function ChalengeFriendDrawer({ showFriendsDrawer, setShowFriendsDrawer, testId 
                                                     onClick={() => {
                                                         if (challengeFriends.includes(friend) === false) {
 
-                                                            // let temp = [...challengeFriends, friend]
                                                             let temp = [friend];
                                                             setChallengeFriends(temp)
                                                         }
@@ -196,17 +153,7 @@ function ChalengeFriendDrawer({ showFriendsDrawer, setShowFriendsDrawer, testId 
 
                     </div>
                 </div>
-                {/* <div className="choose-test">
-                    Choose the Test
-                    <input type="text" name="" id="name" className="questionName bg-gray-50 border 
-                        border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
-                        focus:border-blue-500 block w-full p-2.5 my-3 focus:outline-none"
-                        onChange={(e) => { setChallengeTest(e.target.value) }}
-                    />
-                    <div className="searchBox h-[200px] w-full rounded-lg border-2 border-gray-300">
-
-                    </div>
-                </div> */}
+               
                 <div className="items-center flex justify-center h-[50px]">
 
                     <button className="sendChallenge px-2 w-full py-2 mt-1 rounded-lg border-dark-500

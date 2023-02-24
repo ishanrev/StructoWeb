@@ -43,17 +43,7 @@ const userSchema = mongoose.Schema({
         challenge: mongoose.Mixed
     })],
     lastTest: String,
-    // testProgress: {
-    //     type: mongoose.Schema({
-    //         [String]: mongoose.Schema({
-    //             questionsIndex: [Number],
-    //             score: Number,
-    //             time: Number,
-    //             questionsCompleted: Number
-    //         })
-    //     }),
-    //     default: {}
-    // },
+   
     testProgress: {
         type: mongoose.Schema.Types.Mixed,
         default: {}

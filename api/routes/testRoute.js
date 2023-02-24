@@ -3,7 +3,6 @@ const tests = require('../models/Test')
 
 
 router.get('/test', (req, res) => {
-    console.log('test')
     res.send('this router works')
 })
 
@@ -96,7 +95,6 @@ router.post("/browse", async (req, res) => {
                 }
             })
             console.log(ids)
-            console.log('+=+=+=+=+=+=+=+=+=+=')
             testList = [...testList, ...ids]
         }
         res.status(200).send({ success: true, tests: testList })

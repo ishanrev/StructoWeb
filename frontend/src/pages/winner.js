@@ -20,9 +20,7 @@ function Winner({ mode, winners = ['', '', '', '', '', '', '', '', '', '', '', '
     const { participants = [{ name: '' }, { name: '' }, { name: '' }], participantNames = ['', '', ''], scores, host } = game;
     useEffect(() => {
 
-        //console.log(winners)
         let fetchUsers = async () => {
-            //console.log('trying')
             //console.log(winners)
             let temp = []
             for (let winId of winners) {
@@ -37,7 +35,6 @@ function Winner({ mode, winners = ['', '', '', '', '', '', '', '', '', '', '', '
             setWinnersInfo(temp)
         }
         fetchUsers()
-        //console.log('./././../././././..///../')
     }, [])
 
     const leaderboard = () => {

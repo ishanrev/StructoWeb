@@ -71,9 +71,7 @@ function NoPageFound() {
 
 
 function App() {
-    // let dummyId = uuid()
-    // console.log("mu User Id is ",dummyId)
-    // const navigate = useNavigate()
+    
     const [buffer, setBuffer] = useState(false)
     const [challenges, setChallenges] = useState([{ fromId: 'testFromId', challenge: '' }, { fromId: 'testFrom2', challenge: '' }])
     const [user, setUser] = useState({ _id: uuid(), challenges, saved: [], friends: { friends: [], pending: [], requests: [] } })
@@ -102,7 +100,6 @@ function App() {
             try {
                 console.log('userId main before fetching', userId)
                 let res = await axios.get(axiosLink + '/user/' + userId)
-                console.log('////////////////////////')
                 console.log(res.data.user)
                 setUser(res.data.user)
             } catch (fetchUserError) {
@@ -167,7 +164,6 @@ function App() {
     }, [])
 
     async function updateUser(change) {
-        console.log("--------change da---------")
         console.log(change)
         try {
             let tempId = user._id.toString();

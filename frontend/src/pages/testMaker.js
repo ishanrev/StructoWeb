@@ -10,7 +10,6 @@ import SidebarDrawer from '../components/General/sidebarDrawer'
 import { useNavigate } from 'react-router-dom'
 import { LoggedInContext } from '../contexts'
 const { Panel } = Collapse
-//#region 
 
 function QuestionElement() {
   return (

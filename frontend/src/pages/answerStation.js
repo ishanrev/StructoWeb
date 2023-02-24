@@ -259,7 +259,6 @@ function AnswerStation({ game, tId, gameId, gameObject }) {
             }
         }
 
-        console.log('}}}}}')
         console.log(temp)
         setMyProgress({ ...myProgress, codes: temp })
     }, [code])
@@ -270,7 +269,6 @@ function AnswerStation({ game, tId, gameId, gameObject }) {
             return ''
         }
         let { funcName, parameterNames, parameterTypes } = currentQuestion.question
-        //console.log('bruuuuuuuuuuuuuuuuuuh', currentQuestion.question)
         if (settings.language === 'python') {
             stub = stub + `def ${funcName}(`
             let x = 0;
@@ -376,16 +374,11 @@ function AnswerStation({ game, tId, gameId, gameObject }) {
         }
         // console.log(myProgress);
         // temp[testId] = myProgress;
-        console.log("the save test that i want");
 
         try {
 
             let tempTestProgress = user.testProgress !== undefined ? user.testProgress : {}
-            console.log(myProgress)
             tempTestProgress[testId] = myProgress
-            console.log("before saving")
-            console.log(tempTestProgress)
-            console.log("maccha work", { testProgress: tempTestProgress })
             updateUser({ testProgress: tempTestProgress })
             message.success("successfully saved your progress ")
 
@@ -429,8 +422,6 @@ function AnswerStation({ game, tId, gameId, gameObject }) {
         }
 
         socket.on("challenge winner", ({ winnerId, loserId }) => {
-            //console.log("received the winners and losers")
-            //console.log(winnerId, loserId)
             if (mode === 'challenge') {
 
                 setWinnerId(winnerId)
@@ -495,16 +486,13 @@ function AnswerStation({ game, tId, gameId, gameObject }) {
                 let variableTestId = game === true ? tId : testId
                 let test = await (await axios.get(axiosLink + `/test/${variableTestId}`)).data
                 setTestName(test.name)
-                console.log('>>>>>>>>>')
                 console.log(test)
-                console.log('>>>>>>>>>')
                 //getting test information
                 // if (user.testProgress[test._id.toString()] === undefined) {
                 //     console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<")
                 //     saveTest()
                 // }
                 if (mode === 'practice') {
-                    console.log('<<<<<<<<')
                     if (user !== undefined) {
                         console.log('entered')
                         let tempCurrent
@@ -514,9 +502,7 @@ function AnswerStation({ game, tId, gameId, gameObject }) {
                         } catch (SomeError) {
 
                         }
-                        console.log('>>>>>>>>>')
-                        console.log('[][][][][][][]')
-                        console.log('>>>>>>>>>')
+                      
                         console.log(tempCurrent)
                         if (tempCurrent !== undefined) {
                             //console.log(user.testProgress)
@@ -543,7 +529,6 @@ function AnswerStation({ game, tId, gameId, gameObject }) {
                             //     savedCode = 
                             // }
                             if (tempCurrent.codes !== undefined) {
-                                console.log('pls save me')
                                 savedCode = tempCurrent.codes[latestQuestionIndex.toString()]
                                 console.log(savedCode)
                                 setCode((saveCode !== undefined) ? savedCode : '')
@@ -555,7 +540,6 @@ function AnswerStation({ game, tId, gameId, gameObject }) {
                             setCode(generateCodeStubs())
 
                         } else {
-                            console.log(';;;;;;;;')
                             setCurrentQuestion({
                                 num: 0,
                                 question: test.questions[0]
@@ -691,7 +675,6 @@ function AnswerStation({ game, tId, gameId, gameObject }) {
             if (game === true && passed === true) {
                 // socket.emit("game progress", { gameId, testReport: tempTestReport, participantId: user._id })
                 if (myProgress.questionsIndex.includes(currentQuestion.num) === false) {
-                    //console.log("sendig")
                     socket.emit("update score", { gameId: gameObject.id, increment: currentQuestion.question.points, playerId: user._id.toString() })
                 }
             }
@@ -739,7 +722,6 @@ function AnswerStation({ game, tId, gameId, gameObject }) {
         // setTestReport(temp)
         // //console.log(testReport)
         if (mode === 'challenge' && myProgress.questionsCompleted === questions.length) {
-            //console.log("going to get the winner thingy")
             socket.emit("end challenge", { challengeId, fromId: user._id.toString() })
         }
     }
@@ -1106,7 +1088,6 @@ const ChallengeProgress = ({ opponentProgress, myProgress, numQuestions }) => {
     function calculatePercent(num) {
         let percent;
         percent = Math.round(num * 100 / numQuestions)
-        //console.log("percent = ", percent)
         return percent
     }
     return (

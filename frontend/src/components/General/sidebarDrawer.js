@@ -37,17 +37,12 @@ function SideBarMainDrawer({ drawer }) {
         <div className="wrapper ">
             {/* bg-[#fafafa] */}
             <div className={"SideBar h-full   w-[100%] "}>
-                {/* SideBar header */}
                 <ul className=''>
-                    {/* <div className="header flex justify-between "> */}
-                    {/* <li className='pt-1 my-1 mb-[20px]'>
-                        <img src={HomeStructo} alt="" />
-                    </li> */}
+                    
 
 
                     <div className="search  my-5 w-full gap-2">
 
-                        {/* <li className='searchBar '> */}
                         <input type="text" name="" id="" className={`rounded-3xl h-8 
                       bg-gray-50 w-full  border-1 shadow-md border-gray-400  
                         active: ring-none  border active:outline-none focus:outline-none
@@ -60,8 +55,7 @@ function SideBarMainDrawer({ drawer }) {
                             }}
                             onKeyDown={handleKeyPress}
                         />
-                        {/* <button className="searchIcon px-1 rounded-3xl py-1  bg-primary-300">Se</button> */}
-                        {/* </li> */}
+                        
                     </div>
                     <div className="links ">
 
@@ -134,7 +128,6 @@ function SideBarMainDrawer({ drawer }) {
                     </div>
                 </ul>
 
-                {/* </div> */}
 
 
             </div>

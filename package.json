@@ -1,13 +1,16 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "frontend/public/electron.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd api && node index",
+    "start": "cd api && node index && cd .. && cd frontend && npm start",
     "client": "npm start --prefix frontend",
-    "dev": "concurrently \"npm start\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+     ,
+      "eject": "react-scripts eject",
+    "dev": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\"",
+    "electron": "wait-on tcp:3000 && electron ."
   },
   "repository": {
     "type": "git",
@@ -39,6 +42,8 @@
   "description": "",
   "devDependencies": {
     "concurrently": "^7.6.0",
+    "electron": "^22.0.3",
+    "electron-is-dev": "^2.0.0",
     "wait-on": "^7.0.1"
   }
 }

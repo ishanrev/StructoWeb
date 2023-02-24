@@ -63,12 +63,7 @@ function TestMaker({ questions }) {
                         border-gray-300 text-gray-900 text-sm rounded-lg  focus:outline-none
                         focus:border-2 focus:border-gray-300 block w-full p-2.5" value={testDetails.decription} onChange={(e) => { setTestDetails({ ...testDetails, description: e.target.value }) }}></textarea>
         </div>
-        {/* <div className="my-3">
-          <label htmlFor="" className="creator" id="creator">Creator</label>
-          <input type="text" name="" id="" className="creator bg-gray-50 border 
-                        border-gray-300 text-gray-900 text-sm rounded-lg  focus:outline-none
-                        focus:border-2 focus:border-gray-300 block w-full p-2.5" value={testDetails.creator} onChange={changeCreator} />
-        </div> */}
+       
         <div className="my-3">
           <label htmlFor="" className="Public" id="Public">Public</label>
           <span className="m-2">

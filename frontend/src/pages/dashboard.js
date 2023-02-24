@@ -47,8 +47,6 @@ function Challenges({ friendsUserNames }) {
     }
     useEffect(() => {
         function newChallengeRequest(fromId, testId) {
-            //console.log("new challenge request from " + fromId + " babyyyyyyy")
-            //console.log('/*/*/*/*/*/*/*/*/')
             let tempChallenges = challenges
             tempChallenges.push({ fromId, testId })
             //console.log()
@@ -70,15 +68,12 @@ function Challenges({ friendsUserNames }) {
         })
         socket.on("challenge redirect", ({ challenge }) => {
             const { testId, challengeId } = challenge
-            //console.log("challenge redirect to testId" + testId)
             console.log("challenge redirect")
             navigate('/challenge/answerStation/' + testId + `?challengeId=${challengeId}`)
 
         })
         socket.on("game created", ({ message, game }) => {
-            //console.log(message)
-            //console.log('game details')
-            //console.log(game)
+          
             navigate(`/game/${game.id}`)
         })
         socket.on("joined game", ({ id: gameId }) => {
@@ -87,8 +82,6 @@ function Challenges({ friendsUserNames }) {
         return async () => {
             try {
                 setUser({ ...user, challenges })
-                //console.log("going to update bossman")
-                //console.log("update thingy")
             } catch (updateUserChallengesError) {
                 //console.log(updateUserChallengesError)
             }
@@ -281,7 +274,6 @@ function Dashboard() {
             //console.log("gonna update user")
             updateUser()
         })
-        //console.log("llllllllllllllllllllll")
         //console.log(user.lastTest)
     }, [])
 

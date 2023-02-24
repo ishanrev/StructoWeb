@@ -2,7 +2,7 @@ const router = require('express').Router()
 const users = require('../models/User')
 const bcrypt = require('bcrypt')
 
-//create and ign in a user
+//create and sign in a user
 router.post('/signIn', async (req, res) => {
     const { name, userName, emailId, password } = req.body
     const saltRounds = 10
@@ -69,8 +69,5 @@ router.post('/login', async (req, res) => {
     }
 })
 
-//delete a user
-//edit user details
-//logIn
-// update password thingy - for later
+
 module.exports = router

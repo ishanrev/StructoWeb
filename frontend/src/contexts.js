@@ -3,14 +3,11 @@ import React, { createContext } from 'react'
 // const SocketContext = createContext(null)
 import io from "socket.io-client";
 // import { SOCKET_URL } from "config";
-let  SERVER = null;
-if (process.env.NODE_ENV === 'development') {
-    SERVER = "http://localhost:3001";
+let SERVER = null;
 
-} else {
+SERVER = "http://localhost:3001";
 
-    SERVER = "https://structo-app.herokuapp.com/";
-}
+
 
 const socket = io.connect(SERVER);
 //console.log("main socket is")
@@ -19,7 +16,6 @@ const socket = io.connect(SERVER);
 function socketConfiguration() {
 
     socket.on("connection", () => {
-        //console.log('socket io connection  succesfullle established baby leess go')
     })
 
 

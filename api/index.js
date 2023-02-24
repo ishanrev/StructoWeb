@@ -96,7 +96,6 @@ io.on("connection", (socket) => {
             io.sockets.sockets.get(socketIds[toId]).join(challengeId)
             io.to(challengeId).emit("challenge welcome", { message: 'welcome to the challenge bossmans', challenge: { testId } })
             io.to(challengeId).emit("challenge redirect", { challenge: { testId, challengeId } })
-            console.log("yoooo it works dubs ww]]]]")
         }
 
     })
@@ -154,10 +153,7 @@ io.on("connection", (socket) => {
                 // console.log(game)
                 let game = games[gameId]
                 let { pin, participants, participantNames, id, leaderboard } = game
-                // console.log('participants', participants)
                 let repeatCheck = participants.includes(requestId)
-                console.log(repeatCheck)
-                console.log(pin === gamePin)
                 if (pin === gamePin && repeatCheck === false) {
                     console.log('entered')
                     let temp = participants
@@ -227,7 +223,6 @@ io.on("connection", (socket) => {
 
                     game.participantNames = temp2
 
-                    console.log(game.participants)
                     // io.to(gameId).emit("player removed", { removeId })
                     io.to(gameId).emit('refresh game info', {})
                 }
@@ -235,7 +230,6 @@ io.on("connection", (socket) => {
 
         })
         socket.on("start game", ({ gameId }) => {
-            console.log('server received the start message')
             io.to(gameId).emit("start game", { game: games[gameId] })
         })
         socket.on("end game", ({ gameId }) => {
@@ -462,7 +456,6 @@ app.post("/api/run", async (req, res) => {
         newJob.compileStatus = "success"
         try {
             await newJob.save()
-            console.log('saved yaay')
         } catch (saveErr) {
             console.log(saveErr)
         }
@@ -508,10 +501,8 @@ app.get('/api/status', async (req, res) => {
 app.post('/api/mail', async (req, res) => {
     const jobId = req.query.id
     const mail = req.body
-    console.log('hi');
     transporter.sendMail(mail, function (error, info) {
         if (error) {
-            console.log('hi');
             console.log(error);
             res.status(404).send({ error, success: false })
         } else {

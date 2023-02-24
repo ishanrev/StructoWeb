@@ -25,7 +25,7 @@ const executePy = async (filepath) => {
     runCommand = `python api/test-codes/${name} `
     // runCommand = `python test-codes/${name} `
 
-    console.log("ommmmmmmmmmmmmmm saiiiiiiii rammmmmm")
+    
     console.log(__dirname)
 
 
@@ -127,9 +127,7 @@ const runAnswerPy = async ({ language, data }) => {
         } = data
         try {
             let processedCode = await processCodePy(code, customInput, parameterTypes, funcName)
-            // console.log('processed code', processedCode)
             filepath = await generateFilePy(language, processedCode)
-            // console.log('filepath', filepath)
             try {
                 output = await executePy(filepath)
                 console.log('out', output)
@@ -169,9 +167,7 @@ const runAnswerJS = async ({ language, data }) => {
         } = data
         try {
             let processedCode = await processCodeJS(code, customInput, parameterTypes, funcName)
-            // console.log('processed code', processedCode)
             filepath = await generateFileJS(language, processedCode)
-            // console.log('filepath', filepath)
             try {
                 output = await executeJS(filepath)
                 console.log('out', output)
@@ -269,7 +265,6 @@ const processCodeJS = async (codeMain, input, parameterTypes, funcName) => {
             code = code + arrayToStringJS(string = false, input[ind])
         }
     })
-    console.log("this is the final code before anything big happens)))))))))))))))))))))))))))))))))))))))))))", code)
     code = parameterTypes.length === 0 ? code : code.substring(0, code.length - 1)
     code = code + "))"
     codeMain = codeMain + code;
@@ -439,11 +434,7 @@ const processCodeJava = async (codeMain, input, parameterTypes, funcName, jobId)
 
 const executeJava = async (code) => {
     //here parameters is used for the parameter length
-    console.log()
-    console.log()
-    console.log()
-    console.log()
-    console.log(code)
+
     return new Promise((resolve, reject) => {
         var data = qs.stringify({
             code,
@@ -461,7 +452,6 @@ const executeJava = async (code) => {
 
         axios(config)
             .then(function (response) {
-                console.log("reaching where I want to  be --------------------------------------------")
                 console.log(response.data)
                 if (response.data.success === true) {
                     let out = response.data.output
@@ -471,7 +461,6 @@ const executeJava = async (code) => {
                 }
             })
             .catch(function (error) {
-                console.log("whyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy")
                 reject(error);
             });
     })
@@ -510,40 +499,18 @@ const checkAnswerPy = async ({ language, data }) => {
                         filepath = await generateFilePy(language, processedCode)
                         break;
                     case 'js':
-                        console.log('going to do js implementations')
                         processedCode = await processCodeJS(code, input, parameterTypes, funcName)
-                        console.log('pCode', processedCode)
                         // console.log('processed code', processedCode)
                         filepath = await generateFileJS(language, processedCode)
-                        console.log('path', filepath)
                         break;
                     case 'java':
-                        console.log("javaaaaaaaaaaaaaaajavaaaaaaaaaaaaaaaaa")
                         let jobId = uuid()
                         processedCode = await processCodeJava(code, input, parameterTypes, funcName, jobId)
-                        console.log('processed code', processedCode)
 
                         break;
 
-                    // function handle() {
-                    //     var myForm = document.getElementById("myForm");
-                    //     var formData = new FormData(myForm);
-                    //     var url =
-                    //       "http://compiler-env.i3hveummcp.ap-southeast-1.elasticbeanstalk.com/";
-                    //     var options = {
-                    //       method: "POST",
-                    //       body: formData
-                    //     };
-                    //     fetch(url, options)
-                    //       .then(res => res.json())
-                    //       .then(json => {
-                    //         console.log(json);
-                    //         //Do whatever you want with this JSON response
-                    //       });
-                    //   }
-
+                   
                 }
-                // console.log('filepath', filepath)
 
 
 
@@ -563,42 +530,21 @@ const checkAnswerPy = async ({ language, data }) => {
                         console.log(out)
                         // await runJava(filepath)
                     }
-                    console.log('__________________________________')
-                    console.log(out)
-                    console.log('__________________________________')
-
+                   
                     let out_parsed
                     let output_parsed
                     try {
-                        // console.log('out]]]', out.replaceAll("'", "\""))
-                        // console.log('output]]]', output.replaceAll("'", "\""))
                         out_parsed = JSON.parse(out.replaceAll("'", "\""))
                         output_parsed = JSON.parse(output.replaceAll("'", "\""))
-                        // console.log('out_parsed]]]', out_parsed)
-                        // console.log('output_parsed]]]', output_parsed)
                     } catch (parseError) {
                         console.log("]]]", parseError)
                     }
                     let out_copy = '' + out
-                    // console.log(">>>", typeof (out_parsed))
-                    // console.log(">>>", typeof (output_parsed))
                     if (output.indexOf("[") !== -1 && output.indexOf("]") !== -1) {
                         console.log("familiar", out)
                         try {
                             let equal = true
-                            // for (let reqOut of output_parsed) {
-                            //     if (out_parsed.includes(reqOut) === false) {
-                            //         equal = false
-                            //         break;
-                            //     }
-                            // }
-                            // if (out_parsed.length === output_parsed.length) {
-                            //     correct = equal
-                            // } else {
-                            //     correct = false
-                            // }
-                            // console.log(">>>>>>>>>>>>>>>>>", output_parsed.sort())
-                            // console.log(">>>>>>>>>>>>>>>>>", out_parsed.sort())
+                           
                             correct = JSON.stringify(output_parsed.sort()) === JSON.stringify(out_parsed.sort())
 
                         } catch (parseError) {
@@ -610,8 +556,6 @@ const checkAnswerPy = async ({ language, data }) => {
                             correct = true;
                         }
                     }
-                    // console.log(out)
-                    // console.log(out_copy)
 
                     let subRep;
                     report.push({
@@ -631,23 +575,14 @@ const checkAnswerPy = async ({ language, data }) => {
                         correct
                     })
 
-                    // console.log(report)
                     check = true
                 }
-                //checking is not correct
             } catch (processError) {
-                // console.log(processError)
                 check = false
             }
 
         }
-        // console.log("second")
-        // console.log(report)
-        // for (let f of files) {
-        //     fs.unlink(f, (err) => {
-        //         if (err) { console.log(err) }
-        //     })
-        // }
+       
         if (check === false) {
             reject({ success: false })
         } else if (check === true) {

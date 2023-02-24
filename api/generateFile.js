@@ -33,11 +33,7 @@ const processCode = (code, parameterNames, parameterTypes, funcName)=>{
             code = code + ']'
         }
     })
-    // if(x == parameters.length-1)
-    //     code = code + `sys.argv[${x+1}]`
-    // else
-    //
-    //
+    
     code = code + "))"
     return code;
 }
@@ -48,9 +44,7 @@ const generateFile = async (format,code, parameterNames, parameterTypes, funcNam
     const filename = `${jobId}.${format}`
     const filepath = path.join(dirCodes,filename)
 
-    // Processing the code based on the language
     code = processCode()
-    // 
     
     await fs.writeFileSync(filepath,code);
 

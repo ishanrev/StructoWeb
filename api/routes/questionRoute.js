@@ -191,8 +191,7 @@ router.put("/move", async (req, res) => {
             res.status(400).send({ found: false })
         }
 
-        // console.log(findError_)
-        // res.status(400).send({ message: "no such destination test exists" })
+       
 
     } catch (findError) {
         console.log(findError)

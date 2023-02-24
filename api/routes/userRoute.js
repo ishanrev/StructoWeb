@@ -20,14 +20,12 @@ router.put('/:id', async (req, res) => {
     let changeKeys = Object.keys(newDetails)
     let newValues    // console.log(newProgress);
     try {
-        // let updated = await users.findByIdAndUpdate(userId, { testProgress: newProgress }, { new: true })
         let user = await users.findById(userId)
         for (key of changeKeys) {
             console.log(key)
             console.log(newDetails[key])
             user[key] = newDetails[key];
         }
-        // user.testProgress = newProgress
         user.save()
         let updated = await users.findById(userId)
         console.log(user)
@@ -58,10 +56,5 @@ router.get('/email/:id', async (req, res) => {
         res.status(401).send({ error: findError, success: false })
     }
 })
-// updates:
-// add a test, delete a test
-// add favourites, delete a favourites question list
-// progress updates
 
-// update password thingy - for later
 module.exports = router

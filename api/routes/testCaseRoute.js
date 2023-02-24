@@ -91,15 +91,12 @@ router.put("/", async (req, res) => {
     console.log(questionId, testId)
     try {
         let test = await tests.findById(testId)
-        // console.log(test)
         let question = test.questions.filter((q)=>{
             return q._id.toString()===questionId;
         })[0]
-        // console.log(question)
         let testCase = question.testCases.filter((t)=>{
             return t._id.toString()===testCaseId;
         })[0]
-        //actually updating the test
         let testCasekeys = Object.keys(testCase._doc)
         let updateKeys = Object.keys(update)
         updateKeys.forEach((key)=>{

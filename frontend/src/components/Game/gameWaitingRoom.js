@@ -30,9 +30,7 @@ function GameWaitingRoom({ participants, pin, game, setGame, host, participantNa
 
     }
     const startGame = () => {
-        console.log('entered the start game function')
         if (participants.length === 0) {
-            console.log('shouldve reached here bro')
             message.error("There are not participats currently in the game, please wait")
             return;
         }

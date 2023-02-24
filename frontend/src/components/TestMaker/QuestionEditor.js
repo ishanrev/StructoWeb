@@ -22,10 +22,7 @@ function InputNormal() {
     )
 }
 function QuestionEditor({ newQuestion, setNewQuestion, mode, originalDetails, editQuestionFunc, editIndex, editMode, qEditor }) {
-    // console.log('mode', mode)
-    // console.log('originalDetails', originalDetails)
-
-    // const [parameters, setParameters] = useState([])
+  
     const [parameters, setParameters] = useState([])
     const [questionDetails, setQuestionDetails] = useState({})
     const [newParameter, setNewParameter] = useState({ type: 'Integer' })
@@ -45,7 +42,6 @@ function ${questionDetails.funcName}(${parameters.toString()}) {
         "name" : "value"
     }
 ]`)
-    // const [buttonColour, setButtonColour] = useState('primary-main')
 
     useEffect(() => {
         let tempParameters = []
@@ -60,7 +56,7 @@ function ${questionDetails.funcName}(${parameters.toString()}) {
         setQuestionDetails(temp)
 
         return () => {
-            console.log("question editor is gonna unmount")
+            console.log("question editor is going to unmount")
         }
     }, [])
 
@@ -207,31 +203,7 @@ function ${questionDetails.funcName}(${parameters.toString()}) {
         // console.log(testCases)
     }
     function saveQuestionDetails(e, key) {
-        //         let parameterTypes = []
-        //         let parameterNames = []
-        //         for (let param of parameters) {
-        //             parameterNames.push(param.name)
-        //             parameterTypes.push(param.type)
-        //         }
 
-        //         let temp = { ...questionDetails, parameterNames, parameterTypes }
-        //         temp[key] = e.target.value
-        //         setQuestionDetails(temp)
-        //         // console.log('main temppppppppppppppppppppp', temp)
-        //         if (mode === 'new') {
-        //             setNewQuestion(temp)
-        //         } else if (mode === 'edit') {
-        //             editQuestionFunc(editIndex, questionDetails)
-        //         }
-        //         let fName = questionDetails.funcName
-        //         if (key === 'funcName') {
-        //             let temp2 = `
-        // function ${e.target.value}() {
-        //     // console.log("");
-        // }`
-
-        //             setCode(temp2)
-        //         }
         setNewQuestion((prevQuestion) => {
             let newQ = { ...prevQuestion }
             newQ[key] = e.target.value
@@ -262,14 +234,10 @@ function ${questionDetails.funcName}(${parameters.toString()}) {
     }
 
     return (
-        // <div className="questionEditor bg-white-300 rounded-3xl bg-white
-        //  h-[90vh] w-5/6 md:overflow-x-scroll lg:overflow-x-hidden overflow-y-auto m-auto py-3 border-t-2 shadow-2xl scrollbar-hide no-scrollbar ">
         <>
             <div className="newConfiguration questionEditor bg-white-300 rounded-3xl bg-white-300 border border- 2border-black  
             h-[100vh] w-auto m-7 mb-1 -py-1">
-                {/* <div className="left border-2  h-full p-3 pr-1 mr-8 ml-3 mb-2 my-3 w-2/3 overflow-y-scroll">
-
-                </div> */}
+             
                 <div className="progressManager w-full h-auto p-10 pb-6">
                     <Steps current={current} onChange={(current) => setCurrent(current)} >
                         <Step title="Basic " description="Enter the basic details of the question" />
