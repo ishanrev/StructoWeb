@@ -1,0 +1,5 @@
+function sum(num){
+    // Write your code here
+    return num*num
+}
+console.log(sum(2))

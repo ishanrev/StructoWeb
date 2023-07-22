@@ -243,7 +243,7 @@ router.post("/run", async (req, res) => {
             customInput
         }
 
-        let response = await runAnswerPy({ language, data })
+        let response = await checkAnswerPy({ language, data })
         if (response.success === true) {
             res.status(200).send({output: response.output})
         } else {
