@@ -2,6 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "frontend/public/electron.js",
+  "engines": {
+    "node": "16.16.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd api && node index && cd .. && cd frontend && npm start",
