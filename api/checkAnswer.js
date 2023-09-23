@@ -443,7 +443,7 @@ const executeJava = async (code) => {
         });
         var config = {
             method: "post",
-            url: "https://codex-api.herokuapp.com/",
+            url: "https://api.codex.jaagrav.in",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
             },
@@ -461,6 +461,7 @@ const executeJava = async (code) => {
                 }
             })
             .catch(function (error) {
+                console.log("errror has arrived while executing Java code", error)
                 reject(error);
             });
     })

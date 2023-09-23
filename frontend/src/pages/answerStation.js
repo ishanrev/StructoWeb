@@ -1044,8 +1044,8 @@ function AnswerStation({ game, tId, gameId, gameObject }) {
                             <button className={"submit mx-2 py-1 px-3 " + btn}>
                                 Submit
                             </button>
-                            <Dropdown overlay={runMenu} placement='topRight' arrow>
-                                <span className={isRunLoading ? 'my-1' : undefined}>
+                            {/* <Dropdown overlay={runMenu} placement='topRight' arrow> */}
+                                <span onClick={run} className={isRunLoading ? 'my-1' : undefined}>
                                     <Spin spinning={isRunLoading} >
                                         <button className="run border-2 border-dark-500 border-solid  bg-dark-500 hover:bg-primary-main text-white rounded-[4px] mx-2 py-1 px-3">
                                             Run Code
@@ -1053,7 +1053,7 @@ function AnswerStation({ game, tId, gameId, gameObject }) {
                                         </button>
                                     </Spin>
                                 </span>
-                            </Dropdown>
+                            {/* </Dropdown> */}
                             {currentQuestion.num === questions.length - 1 ?
                                 <button className={"EndTest mx-2 py-1 px-3 " + btn} onClick={endTest}>
                                     End Test
