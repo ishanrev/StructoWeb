@@ -6,7 +6,7 @@ import io from "socket.io-client";
 let SERVER = null;
 
 if (process.env.NODE_ENV === "production") {
-    SERVER = "http://structo.herokuapp.com/"
+    SERVER = "http://structo-f75c6d12164f.herokuapp.com/"
 
 } else {
 

@@ -1,7 +1,7 @@
 // const axiosLink = "http://localhost:3001/api"
 let axiosLink;
 if (process.env.NODE_ENV === "production") {
-    axiosLink = "http://structo.herokuapp.com/api"
+    axiosLink = "http://structo-f75c6d12164f.herokuapp.com/"
 
 } else {
 
