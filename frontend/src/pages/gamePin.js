@@ -3,12 +3,12 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import SidebarDrawer from '../components/General/sidebarDrawer'
 import { LoggedInContext, SocketContext, UserContext } from '../contexts'
-
+import { v4 as uuid } from 'uuid'
 
 function GamePinPage() {
     let navigate = useNavigate()
     const socket = useContext(SocketContext)
-    let { user } = useContext(UserContext)
+    let { user, setUser } = useContext(UserContext)
     const { loggedIn, setLoggedIn } = useContext(LoggedInContext)
 
     const [gamePin, setGamePin] = useState('')
@@ -17,7 +17,20 @@ function GamePinPage() {
     const [stage, setStage] = useState(0)
     const joinGame = () => {
         if (name !== '') {
-            socket.emit("join game", { requestId: user._id, gamePin, requestName: name })
+            if (loggedIn === true) {
+
+                socket.emit("join game", { requestId: user._id, gamePin, requestName: name })
+            } else {
+                let tempUser = {
+                    name,
+                    _id: uuid()
+                }
+                socket.emit("save userId", {userId: tempUser._id})
+                socket.emit("join game", { requestId: tempUser._id, gamePin, requestName: name })
+                sessionStorage.setItem("temporary", "true")
+
+                setUser(tempUser)
+            }
         }
 
     }
@@ -26,15 +39,15 @@ function GamePinPage() {
 
     useEffect(() => {
         socket.on("game created", ({ message, game }) => {
-            
+
             navigate(`/game/${game.id}`)
         })
         socket.on("joined game", ({ id: gameId }) => {
             navigate(`/game/${gameId}`)
         })
-        if (loggedIn === undefined) {
-            navigate('/home')
-        }
+        // if (loggedIn === undefined) {
+        //     navigate('/home')
+        // }
 
     }, [])
 

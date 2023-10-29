@@ -57,9 +57,9 @@ function SideBar({ drawer }) {
                         <li className=''><button className='create 
                         rounded-xl  bg-dark-500 my-3  text-white w-full h-10 hover:opacity-50'
                             onClick={() => {
-                                navigate('/create')
+                                navigate('/joinGame')
                             }}
-                        >Create Test</button></li>
+                        >Join Game</button></li>
 
                         <li className={'' + liClass}
                             onClick={() => { navigate('/testCenter') }}>

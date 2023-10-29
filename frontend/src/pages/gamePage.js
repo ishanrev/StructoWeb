@@ -29,7 +29,7 @@ function GamePage() {
 
 
     useEffect(() => {
-        if (loggedIn === undefined) {
+        if (loggedIn === undefined && sessionStorage.getItem("temporary") === undefined) {
             navigate('/home')
         }
         async function getGame() {

@@ -393,7 +393,7 @@ function AnswerStation({ game, tId, gameId, gameObject }) {
 
     }
     useEffect(() => {
-        if (loggedIn === undefined) {
+        if (loggedIn === undefined && sessionStorage.getItem("temporary") ===undefined) {
             navigate('/home')
         }
         if (mode === 'challenge') {
