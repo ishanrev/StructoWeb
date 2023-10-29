@@ -5,7 +5,13 @@ import io from "socket.io-client";
 // import { SOCKET_URL } from "config";
 let SERVER = null;
 
-SERVER = "http://localhost:3001";
+if (process.env.NODE_ENV === "production") {
+    SERVER = "http://structo.herokuapp.com/"
+
+} else {
+
+    SERVER = "http://localhost:3001/"
+}
 
 
 
