@@ -22,3 +22,31 @@ Recognizing this gap, the idea for Structo emerged. It is designed to combine th
 - **Multi-Language Support:** While practicing, users can choose from three different programming languages and tailor their coding environment to their preferences.
 
 These features collectively transform coding learning into an engaging and interactive experience, offering opportunities for skill development and knowledge sharing among students and users.
+
+## Languages and Technologies
+
+FunCodeLearn is built using a variety of languages and technologies, including:
+
+- JavaScript
+- Node.js
+- React
+- MongoDB
+- Express
+
+### Front-end Frameworks and Libraries
+
+- Bootstrap
+- Ant Design
+
+### Back-end Frameworks and Tools
+
+- Node.js
+- Express
+- RestAPI
+
+### Additional Technologies
+
+- Socket.io
+- Redux
+- Passport
+
