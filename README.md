@@ -25,28 +25,17 @@ These features collectively transform coding learning into an engaging and inter
 
 ## Languages and Technologies
 
-FunCodeLearn is built using a variety of languages and technologies, including:
+Structo is built using a variety of languages and technologies, including:
 
 - JavaScript
 - Node.js
 - React
 - MongoDB
 - Express
-
-### Front-end Frameworks and Libraries
-
 - Bootstrap
 - Ant Design
-
-### Back-end Frameworks and Tools
-
-- Node.js
 - Express
-- RestAPI
-
-### Additional Technologies
-
 - Socket.io
 - Redux
-- Passport
+
 
