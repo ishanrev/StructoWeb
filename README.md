@@ -38,4 +38,7 @@ Structo is built using a variety of languages and technologies, including:
 - Socket.io
 - Redux
 
+## Youtube
+You can find a demonstration of the project on https://www.youtube.com/watch?v=XEEeTpj51HY
+
 
