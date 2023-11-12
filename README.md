@@ -1,8 +1,8 @@
-# FunCodeLearn
+# Structo
 
-FunCodeLearn is an innovative learning platform aimed at making coding enjoyable through gamification and user-friendly interfaces. Traditional tools like Kahoot, Quizizz, and Socrative excel in handling simple format quizzes but fall short in supporting online coding, especially in Computer Science classes.
+Structo is an innovative learning platform aimed at making coding enjoyable through gamification and user-friendly interfaces. Traditional tools like Kahoot, Quizizz, and Socrative excel in handling simple format quizzes but fall short in supporting online coding, especially in Computer Science classes.
 
-Recognizing this gap, the idea for FunCodeLearn emerged. It is designed to combine the interactive nature of these tools with the capability to engage students in coding exercises. The platform is being developed to provide an interactive learning environment where coding becomes an enjoyable experience through gamified challenges and an easy-to-use interface.
+Recognizing this gap, the idea for Structo emerged. It is designed to combine the interactive nature of these tools with the capability to engage students in coding exercises. The platform is being developed to provide an interactive learning environment where coding becomes an enjoyable experience through gamified challenges and an easy-to-use interface.
 
 ## Key Features
 
