@@ -1,44 +1,44 @@
-# Structo
+# 🚀 Structo
 
-Structo is an innovative learning platform aimed at making coding enjoyable through gamification and user-friendly interfaces. Traditional tools like Kahoot, Quizizz, and Socrative excel in handling simple format quizzes but fall short in supporting online coding, especially in Computer Science classes.
+Structo is a gamified coding platform designed to make learning **Computer Science** fun, interactive, and classroom-friendly. Unlike tools like Kahoot or Quizizz, Structo supports **real-time coding**, making it ideal for both teaching and self-practice.
 
-Recognizing this gap, the idea for Structo emerged. It is designed to combine the interactive nature of these tools with the capability to engage students in coding exercises. The platform is being developed to provide an interactive learning environment where coding becomes an enjoyable experience through gamified challenges and an easy-to-use interface.
+🎥 [**Watch the demo**](https://www.youtube.com/watch?v=XEEeTpj51HY)
 
-## Key Features
+---
 
-- **Gamification of Coding:** Introduce game-like elements to coding exercises, making learning more engaging.
-- **User-Friendly Interface:** Design a platform that's intuitive and easy to navigate for both students and educators.
-- **Support for Online Coding Sessions:** Enable real-time coding exercises during classes, catering specifically to Computer Science lessons.
+## 🌟 Why Structo?
 
-- **Seamless Account Management:** Users can effortlessly sign up and log in, ensuring a personalized experience.
-- **Track Progress:** The dashboard provides an intuitive way for students to monitor their progress, track achievements, and set goals.
-- **Build Your Coding Network:** Users can expand their coding circles by sending and accepting friend requests, fostering a supportive learning community.
-- **Rich Library of Coding Challenges:** Browse through an extensive collection of premade coding tests via the "Browse" page, catering to various skill levels.
-- **Challenge Your Friends:** Engage in thrilling live coding games with friends or practice solo to hone your coding skills.
-- **Classroom Challenges:** Teachers can host coding challenges within the platform, facilitating a dynamic classroom testing environment.
-- **Effortless Data Management:** Teachers can download game results and related student data upon challenge completion, simplifying assessment.
-- **Custom Practice Playlists:** Users can curate custom question playlists for focused practice on challenging topics.
-- **Create Your Own Coding Tests:** Users can design and share coding tests, each with specific test cases and desired outputs, promoting creativity and knowledge sharing.
-- **Multi-Language Support:** While practicing, users can choose from three different programming languages and tailor their coding environment to their preferences.
+Traditional quiz platforms can’t run code. Structo bridges that gap by combining **gamified challenges** with an intuitive **online coding environment**—perfect for students and teachers alike.
 
-These features collectively transform coding learning into an engaging and interactive experience, offering opportunities for skill development and knowledge sharing among students and users.
+---
 
-## Languages and Technologies
+## 🧩 Key Features
 
-Structo is built using a variety of languages and technologies, including:
+- 🎮 **Gamified Coding Challenges** – Learn through engaging, game-style exercises.  
+- 🧑‍🏫 **Live Classroom Coding** – Teachers can host interactive, real-time coding tests.  
+- 📈 **Track Progress** – Visual dashboard to monitor growth and achievements.  
+- 👥 **Friend Network** – Connect with classmates, challenge friends, and build a learning community.  
+- 📚 **Challenge Library** – Access a wide range of premade tests across difficulty levels.  
+- 🛠️ **Custom Test Creation** – Design your own coding quizzes with test cases.  
+- 💾 **Auto Data Export** – Teachers can download results for easy grading.  
+- 🔀 **Practice Playlists** – Create focused playlists on tricky topics.  
+- 🌐 **Multi-Language Support** – Practice in 3 coding languages of your choice.
 
-- JavaScript
-- Node.js
-- React
-- MongoDB
-- Express
-- Bootstrap
-- Ant Design
-- Express
-- Socket.io
-- Redux
+---
 
-## Youtube
-You can find a demonstration of the project on https://www.youtube.com/watch?v=XEEeTpj51HY
+## 💻 Tech Stack
 
+**Frontend:**  
+React, Redux, Bootstrap, Ant Design  
 
+**Backend:**  
+Node.js, Express, Socket.io  
+
+**Database:**  
+MongoDB
+
+---
+
+## 📬 Connect
+
+[**LinkedIn – Ishan Revankar**](https://www.linkedin.com/in/ishanrev/)
